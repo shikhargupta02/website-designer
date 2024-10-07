@@ -1,0 +1,116 @@
+.social-icons {
+  display: none;
+  @media (min-width: 1024px) {
+    display: flex;
+  }
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  .icon-li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2563eb;
+    transition-duration: 300ms;
+    width: 160px;
+    height: 60px;
+    margin-left: -100px;
+    &:hover {
+      margin-left: -10px;
+    }
+    .linkedIn {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      color: #d1d5db;
+    }
+  }
+  .icon-gi {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition-duration: 300ms;
+    width: 160px;
+    height: 60px;
+    margin-left: -100px;
+    background: #333333;
+    &:hover {
+      margin-left: -10px;
+    }
+    .github {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      color: #d1d5db;
+    }
+  }
+
+  .icon-in {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: linear-gradient(to right, var(--tw-gradient-stops));
+    background-color: #ec4899;
+    background-color: #f59e0b;
+    transition-duration: 300ms;
+    width: 160px;
+    height: 60px;
+    margin-left: -100px;
+    &:hover {
+      margin-left: -10px;
+    }
+    .insta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      color: #d1d5db;
+    }
+  }
+  .icon-mail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition-duration: 300ms;
+    width: 160px;
+    height: 60px;
+    margin-left: -100px;
+    background: #369c86;
+    &:hover {
+      margin-left: -10px;
+    }
+    .mail {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      color: #d1d5db;
+    }
+  }
+  .icon-res {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition-duration: 300ms;
+    width: 160px;
+    height: 60px;
+    margin-left: -100px;
+    background: #565f69;
+    &:hover {
+      margin-left: -10px;
+    }
+    .resume {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      color: #d1d5db;
+    }
+  }
+}
