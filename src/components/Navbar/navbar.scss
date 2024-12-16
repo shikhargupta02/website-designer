@@ -50,6 +50,19 @@
     }
   }
 }
+.nav-item-home,
+.menu-items-home,
+.nav-item-about,
+.nav-item-work,
+.nav-item-resume,
+.menu-items-resume,
+.menu-items-about,
+.menu-items-work {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
 .nav-item-home:hover,
 .nav-item-about:hover,
 .nav-item-work:hover,
@@ -60,5 +73,5 @@
 .menu-items-work:hover {
   color: white;
   // transition: margin-right 2s ease-in-out;
-  // text-decoration: underline;
+  // text-decoration: underline #54dde4;
 }

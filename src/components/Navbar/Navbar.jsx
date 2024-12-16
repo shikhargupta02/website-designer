@@ -1,42 +1,52 @@
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
-
+import React from "react";
+import { Fragment } from "react";
+import { AiOutlineHome } from "react-icons/ai";
+import { IoPersonOutline } from "react-icons/io5";
+import { HiOutlinePresentationChartLine } from "react-icons/hi";
 import logo from "../../assets/logo2.png";
 import "./navbar.scss";
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const handleClick = () => setNav(!nav);
-  const handleResumeClick = () => {
-    const link = document.createElement("a");
-    link.href = `https://climate-adapt.eea.europa.eu/en/about/climate-adapt-10-case-studies-online.pdf/@@download/file`;
-    link.target = "_blank";
-    link.download = "MyResume.pdf";
-    link.click();
-  };
+  // const handleResumeClick = () => {
+  //   const link = document.createElement("a");
+  //   link.href = `https://climate-adapt.eea.europa.eu/en/about/climate-adapt-10-case-studies-online.pdf/@@download/file`;
+  //   link.target = "_blank";
+  //   link.download = "MyResume.pdf";
+  //   link.click();
+  // };
   return (
     <>
       <div className="nav-wrapper">
-        <div>
+        <div style={{ paddingLeft: "4%" }}>
           <img src={logo} alt="my logo" style={{ width: "75px" }} />
         </div>
 
         <ul className="nav-items">
-          <li className="nav-item-home">
-            {" "}
-            <Link to="/">Home</Link>
-          </li>
-          {/* <li className="nav-item-about">About</li> */}
-          <li className="nav-item-about">
-            <Link to="/about">About</Link>
-          </li>
-          <li className="nav-item-work">
-            {" "}
-            <Link to="/work">Work</Link>
-          </li>
-          <li className="nav-item-resume" onClick={handleResumeClick}>
-            Resume
-          </li>
+          <Link to="/">
+            <li className="nav-item-home">
+              <AiOutlineHome height={"25px"} />
+              Home
+            </li>
+          </Link>
+          <Link to="/about">
+            <li className="nav-item-about">
+              <IoPersonOutline height={"25px"} />
+              About
+            </li>
+          </Link>
+          <Link to="/work">
+            <li className="nav-item-work">
+              <HiOutlinePresentationChartLine height={"25px"} />
+              Work
+            </li>
+          </Link>
+          {/* <li className="nav-item-resume">
+            <Link to="/resume">Resume</Link>
+          </li> */}
         </ul>
 
         {/*mobile menu*/}
@@ -45,7 +55,7 @@ const Navbar = () => {
             <li className="menu-items-home">Home</li>
             <li className="menu-items-about">About</li>
             <li className="menu-items-work">Work</li>
-            <li className="menu-items-resume">Resume</li>
+            {/* <li className="menu-items-resume">Resume</li> */}
           </ul>
         </div>
 

@@ -3,6 +3,18 @@
   padding-right: 6rem;
   background: #0a192f;
   flex-grow: 1;
+  .work-head {
+    padding-top: 6rem;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    color: #d1d5db;
+  }
+  .project-section {
+    text-align: center;
+    color: #d1d5db;
+  }
   .project-card-wrapper {
     display: flex;
     flex-wrap: wrap;

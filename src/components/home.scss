@@ -2,4 +2,135 @@
   width: 100%;
   min-height: 100vh;
   background: #0a192f;
+  .home-top-section {
+    display: flex;
+    padding-left: 20%;
+    padding-right: 1rem;
+    padding-top: 20%;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    max-width: 1000px;
+    color: #54dde4;
+
+    @media (max-width: 1024px) {
+      padding-left: 10%;
+    }
+    @media (max-width: 640px) {
+      padding-left: 5%;
+    }
+    .greeting {
+      font-size: 1.875rem;
+      line-height: 2.25rem;
+    }
+    .top-section-name {
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+      font-weight: 700;
+      color: #d1dcff;
+
+      @media (min-width: 640px) {
+        font-size: 4.5rem;
+        line-height: 1;
+      }
+    }
+    .top-section-intro {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      max-width: 700px;
+      font-size: 1.5rem;
+      line-height: 2rem;
+      color: #d1dcff;
+    }
+    .home-animation {
+      position: absolute;
+      top: 1.5rem;
+      right: 1rem;
+      width: 45%;
+    }
+  }
+  .home-section-intro {
+    display: flex;
+    padding-left: 20%;
+    padding-right: 1rem;
+    padding-bottom: 6rem;
+    padding-top: 15%;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    max-width: 1000px;
+    color: #54dde4;
+    @media (max-width: 1024px) {
+      padding-left: 10%;
+    }
+    @media (max-width: 640px) {
+      padding-left: 5%;
+    }
+    .home-section-intro-head {
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+      font-weight: 600;
+      color: #d1dcff;
+
+      @media (min-width: 640px) {
+        font-size: 3rem;
+        line-height: 1;
+      }
+    }
+    .intro-details {
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+      font-size: 1.5rem;
+      line-height: 2rem;
+      color: #d1dcff;
+    }
+  }
+  .social-icons-bottom {
+    display: flex;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 3rem;
+    padding-bottom: 6rem;
+    flex-direction: column;
+    width: 100%;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    color: #ffffff;
+    align-items: center;
+
+    @media (min-width: 1024px) {
+      display: none;
+    }
+    .social-head {
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+      font-weight: 700;
+    }
+    .sub-head {
+      padding-top: 1rem;
+    }
+    .icon-flex {
+      display: flex;
+      margin-top: 2rem;
+      flex-direction: row;
+    }
+    .icon-wrapper {
+      margin-left: 2rem;
+      margin-right: 2rem;
+      border-radius: 9999px;
+      height: 3.5rem;
+      background: #ffffff;
+      @media (max-width: 640px) {
+        margin: 0 1rem;
+      }
+      .icon-div {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+      }
+    }
+  }
 }

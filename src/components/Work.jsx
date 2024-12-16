@@ -5,10 +5,10 @@ const Work = () => {
   const projectData = getProjectData();
   return (
     <div className="work-wrapper">
-      <div className="text-4xl text-center pt-24 font-bold text-gray-300">
-        My Recent <span className="text-[#54dde4]">Works</span>
+      <div className="work-head">
+        My Recent <span className="highlighted-text">Works</span>
       </div>
-      <div className="text-gray-300 text-center">
+      <div className="project-section">
         Here are a few projects I have worked on.
       </div>
       <div className="project-card-wrapper">

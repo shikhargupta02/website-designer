@@ -11,11 +11,9 @@ const Card = (props) => {
             <img src={props.image} alt="app" className="project-image" />
             <div className="project-data-wrapper">
               <div className="project-data">
-                <div className="text-3xl font-bold text-gray-200 text-center">
-                  {props.title}
-                </div>
+                <div className="project-title">{props.title}</div>
 
-                <p className="pt-3 pb-6 text-center">{props.description}</p>
+                <p className="project-description">{props.description}</p>
               </div>
               <div className="project-link-buttons-wrapper">
                 <a
