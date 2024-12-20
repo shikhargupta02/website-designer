@@ -4,6 +4,7 @@ import { AiFillLinkedin } from "react-icons/ai";
 import { MdEmail } from "react-icons/md";
 import { AiFillInstagram } from "react-icons/ai";
 import "./home.scss";
+import { FiExternalLink } from "react-icons/fi";
 
 const Home = () => {
   return (
@@ -21,6 +22,15 @@ const Home = () => {
         <div className="home-animation">
           <Animation />
         </div>
+        <a
+          href="https://drive.google.com/file/d/1b4z4QFKpR8tgargrrcWrjiMDMhDNFY3k/view?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="resume-button">
+            My Resume <FiExternalLink className="icon" />
+          </div>
+        </a>
       </div>
       <div className="home-section-intro">
         <h1 className="home-section-intro-head">
@@ -39,7 +49,6 @@ const Home = () => {
             Web Technologies and Products{" "}
           </span>
           and I intend to become a
-          {/* <span className="text-[#54dde4]"> Deep Learning</span> and */}
           <span className="highlighted-text"> Fullstack Developer.</span>
           <br />
           <br />

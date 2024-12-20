@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Card from "./Card/Card";
 import { skillIcons } from "./projects-data";
 import "./about.scss";
 const About = () => {
-  const mySkills = skillIcons();
+  const getIconSize = () => {
+    const width = window.innerWidth;
+    if (width < 770) return 40;
+    if (width < 1080) return 60;
+    return 80;
+  };
+  const [iconSize, setIconSize] = useState(getIconSize());
+  useEffect(() => {
+    const handleResize = () => setIconSize(getIconSize());
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  const mySkills = skillIcons(iconSize);
   return (
     <div className="about-section">
       <div className="about-top-wrapper">

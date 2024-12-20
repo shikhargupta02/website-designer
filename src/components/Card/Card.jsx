@@ -38,7 +38,6 @@ const Card = (props) => {
         </div>
       ) : (
         <div className="reusable-component">
-          <div className="background-blur"></div>
           <div className="foreground">
             <div className="icon-container">{props.icon}</div>
           </div>

@@ -37,7 +37,7 @@ export const SocialIcon = () => {
           </li>
           <li className="icon-res">
             <a
-              href="https://pdflink.to/Shikhar_resume"
+              href="https://drive.google.com/file/d/1b4z4QFKpR8tgargrrcWrjiMDMhDNFY3k/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="resume"

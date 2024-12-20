@@ -1,8 +1,12 @@
 .work-wrapper {
-  padding-left: 6rem;
-  padding-right: 6rem;
+  padding-left: 10%;
+  padding-right: 10%;
   background: #0a192f;
   flex-grow: 1;
+  @media (max-width: 960px) {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
   .work-head {
     padding-top: 6rem;
     font-size: 2.25rem;
@@ -20,9 +24,11 @@
     flex-wrap: wrap;
     margin-top: 4rem;
     padding-bottom: 6rem;
-    padding-left: 3rem;
-    width: 91.666667%;
+    width: 100%;
     justify-content: center;
     gap: 4rem;
+    @media (max-width: 1024px) {
+      gap: 2rem;
+    }
   }
 }

@@ -1,4 +1,6 @@
-import image from "../assets/sample-project.png";
+import expense from "../assets/expense-tracker.png";
+import food from "../assets/food-app.png";
+import stock from "../assets/stock-analyser.png";
 import { FaPython } from "react-icons/fa";
 import { CgCPlusPlus } from "react-icons/cg";
 
@@ -15,54 +17,38 @@ export const getProjectData = () => {
     {
       title: "Expense Tracker",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, reiciendis sunt corrupti sapiente magni repudiandae fugaveniam aliquam pariatur cupiditate velit nobis laborum saepe vero atque eaque delectus, recusandae at?",
-      img: image,
+        "A simple and responsive frontend app built with React and SCSS to help users track and manage daily expenses efficiently. It features expense categorization, dynamic updates, and an intuitive interface for better financial planning.",
+      img: expense,
       projectLink: "https://myexpenses.netlify.app",
       gitLink: "https://github.com/shikhargupta02/React-apps-Expense-tracker",
     },
     {
       title: "Market Analyser",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, reiciendis sunt corrupti sapiente magni repudiandae fugaveniam aliquam pariatur cupiditate velit nobis laborum saepe vero atque eaque delectus, recusandae at?",
-      img: image,
+        "A responsive frontend application built with React and Chart.js to visualize stock performance. It displays dynamic, interactive charts with real-time data, enabling users to analyze trends and make informed decisions effortlessly.",
+      img: stock,
       projectLink: "https://my-stocks-analyser.netlify.app",
       gitLink: "https://github.com/shikhargupta02/React-apps-Stock-analyser",
     },
     {
       title: "Insta Food",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, reiciendis sunt corrupti sapiente magni repudiandae fugaveniam aliquam pariatur cupiditate velit nobis laborum saepe vero atque eaque delectus, recusandae at?",
-      img: image,
+        "A frontend-only application built with React to simulate a food delivery platform. Users can browse food items, add them to the cart, and view their selections with a dynamic and responsive interface. It showcases features like state management and interactive UI design.",
+      img: food,
       projectLink: "https://my-react-order.netlify.app",
       gitLink: "https://github.com/shikhargupta02/React-apps-Food-ordering",
     },
-    {
-      title: "Expense Tracker",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, reiciendis sunt corrupti sapiente magni repudiandae fugaveniam aliquam pariatur cupiditate velit nobis laborum saepe vero atque eaque delectus, recusandae at?",
-      img: image,
-      projectLink: "https://myexpenses.netlify.app",
-      gitLink: "https://github.com/shikhargupta02/React-apps-Expense-tracker",
-    },
-    {
-      title: "Expense Tracker",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, reiciendis sunt corrupti sapiente magni repudiandae fugaveniam aliquam pariatur cupiditate velit nobis laborum saepe vero atque eaque delectus, recusandae at?",
-      img: image,
-      projectLink: "https://myexpenses.netlify.app",
-      gitLink: "https://github.com/shikhargupta02/React-apps-Expense-tracker",
-    },
   ];
 };
-export const skillIcons = () => {
+export const skillIcons = (iconSize) => {
   return [
-    <SiReact size={80} />,
-    <SiTypescript size={80} />,
-    <SiJavascript size={80} />,
-    <SiCss3 size={80} />,
-    <SiHtml5 size={80} />,
-    <CgCPlusPlus size={80} />,
-    <FaPython size={80} />,
+    <SiReact size={iconSize} />,
+    <SiTypescript size={iconSize} />,
+    <SiJavascript size={iconSize} />,
+    <SiCss3 size={iconSize} />,
+    <SiHtml5 size={iconSize} />,
+    <CgCPlusPlus size={iconSize} />,
+    <FaPython size={iconSize} />,
     // <SiMysql size={80} />,
   ];
 };
