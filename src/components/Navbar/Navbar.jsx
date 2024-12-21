@@ -7,8 +7,6 @@ import { IoPersonOutline } from "react-icons/io5";
 import { HiOutlinePresentationChartLine } from "react-icons/hi";
 import logo from "../../assets/logo2.png";
 import "./navbar.scss";
-import { CgGitFork } from "react-icons/cg";
-import { AiFillStar } from "react-icons/ai";
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const handleClick = () => setNav(!nav);
