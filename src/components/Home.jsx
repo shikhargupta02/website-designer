@@ -23,7 +23,7 @@ const Home = () => {
           <Animation />
         </div>
         <a
-          href="https://drive.google.com/file/d/1b4z4QFKpR8tgargrrcWrjiMDMhDNFY3k/view?usp=sharing"
+          href="https://drive.google.com/file/d/1MeMmeIO3rKnMRSDT3c-SQhTxNK07jDgb/view?usp=drive_link"
           target="_blank"
           rel="noopener noreferrer"
         >
