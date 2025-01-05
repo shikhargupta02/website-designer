@@ -61,23 +61,23 @@ export const ProjectSection = (props) => {
             value={project.projectLink}
             placeholder="Project Link"
           />
-          <div className="tooltip-wrapper">
-            <textarea
-              onChange={(e) =>
-                handleProjectChange(index, "projectDescription", e.target.value)
-              }
-              placeholder="Project Description"
-              value={project.projectDescription}
-              required={true}
-              className="tooltip-input"
-            />
-            <div
+          {/* <div className="tooltip-wrapper"> */}
+          <textarea
+            onChange={(e) =>
+              handleProjectChange(index, "projectDescription", e.target.value)
+            }
+            placeholder="Project Description"
+            value={project.projectDescription}
+            required={true}
+            // className="tooltip-input"
+          />
+          {/* <div
               className="ai-tooltip"
               title="This text will be repharsed by AI"
             >
               <TbExclamationMark className="exclamation-icon" />
-            </div>
-          </div>
+            </div> 
+          </div> */}
           <input
             type="file"
             onChange={(e) =>
