@@ -10,6 +10,7 @@ import { cloneDeep } from "lodash";
 import { useDispatch } from "react-redux";
 import { updateForm, updateShowPortfolio } from "../../redux/formSlice";
 import { Loader } from "../Loader";
+import { TbExclamationMark } from "react-icons/tb";
 
 const ProjectForm = () => {
   const [showLoader, setLoader] = useState(false);
@@ -85,23 +86,45 @@ const ProjectForm = () => {
 
             <div className="form-group">
               <label htmlFor="description">Describe yourself:</label>
-              <textarea
-                id="description"
-                onChange={(e) =>
-                  handleFormUpdate("home.description", e.target.value, formRef)
-                }
-                required={true}
-              />
+              <div className="tooltip-wrapper">
+                <textarea
+                  id="description"
+                  onChange={(e) =>
+                    handleFormUpdate(
+                      "home.description",
+                      e.target.value,
+                      formRef
+                    )
+                  }
+                  required={true}
+                  className="tooltip-input"
+                />
+                <div
+                  className="ai-tooltip"
+                  title="This text will be repharsed by AI"
+                >
+                  <TbExclamationMark className="exclamation-icon" />
+                </div>
+              </div>
             </div>
             <div className="form-group">
               <label htmlFor="short-intro">Short intro of you:</label>
-              <textarea
-                id="short-intro"
-                onChange={(e) =>
-                  handleFormUpdate("home.shortIntro", e.target.value, formRef)
-                }
-                required={true}
-              />
+              <div className="tooltip-wrapper">
+                <textarea
+                  id="short-intro"
+                  onChange={(e) =>
+                    handleFormUpdate("home.shortIntro", e.target.value, formRef)
+                  }
+                  required={true}
+                  className="tooltip-input"
+                />
+                <div
+                  className="ai-tooltip"
+                  title="This text will be repharsed by AI"
+                >
+                  <TbExclamationMark className="exclamation-icon" />
+                </div>
+              </div>
             </div>
             <div className="form-group">
               <h3>About yourself:</h3>
@@ -109,27 +132,45 @@ const ProjectForm = () => {
                 <label htmlFor="about-yourself">
                   Write little about your education background:
                 </label>
-                <textarea
-                  id="about-yourself"
-                  onChange={(e) =>
-                    handleFormUpdate(
-                      "about.aboutYourself",
-                      e.target.value,
-                      formRef
-                    )
-                  }
-                  required={true}
-                />
+                <div className="tooltip-wrapper">
+                  <textarea
+                    id="about-yourself"
+                    onChange={(e) =>
+                      handleFormUpdate(
+                        "about.aboutYourself",
+                        e.target.value,
+                        formRef
+                      )
+                    }
+                    required={true}
+                    className="tooltip-input"
+                  />
+                  <div
+                    className="ai-tooltip"
+                    title="This text will be repharsed by AI"
+                  >
+                    <TbExclamationMark className="exclamation-icon" />
+                  </div>
+                </div>
               </div>
               <div>
                 <label htmlFor="hobbies">Write little about hobbies:</label>
-                <textarea
-                  id="hobbies"
-                  onChange={(e) =>
-                    handleFormUpdate("about.hobbies", e.target.value, formRef)
-                  }
-                  required={true}
-                />
+                <div className="tooltip-wrapper">
+                  <textarea
+                    id="hobbies"
+                    onChange={(e) =>
+                      handleFormUpdate("about.hobbies", e.target.value, formRef)
+                    }
+                    required={true}
+                    className="tooltip-input"
+                  />
+                  <div
+                    className="ai-tooltip"
+                    title="This text will be repharsed by AI"
+                  >
+                    <TbExclamationMark className="exclamation-icon" />
+                  </div>
+                </div>
               </div>
             </div>
 

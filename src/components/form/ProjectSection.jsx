@@ -61,7 +61,7 @@ export const ProjectSection = (props) => {
             value={project.projectLink}
             placeholder="Project Link"
           />
-          <div>
+          <div className="tooltip-wrapper">
             <textarea
               onChange={(e) =>
                 handleProjectChange(index, "projectDescription", e.target.value)
@@ -69,9 +69,13 @@ export const ProjectSection = (props) => {
               placeholder="Project Description"
               value={project.projectDescription}
               required={true}
+              className="tooltip-input"
             />
-            <div title="This text will be repharsed by AI">
-              <TbExclamationMark />
+            <div
+              className="ai-tooltip"
+              title="This text will be repharsed by AI"
+            >
+              <TbExclamationMark className="exclamation-icon" />
             </div>
           </div>
           <input
