@@ -1,8 +1,10 @@
 import "./work.scss";
 import Card from "./Card/Card.jsx";
-import { getProjectData } from "./projects-data.js";
+import { useSelector } from "react-redux";
+import { selectForm } from "../redux/formSlice.js";
 const Work = () => {
-  const projectData = getProjectData();
+  const form = useSelector(selectForm);
+  const projects = form.projects;
   return (
     <div className="work-wrapper">
       <div className="work-head">
@@ -12,15 +14,15 @@ const Work = () => {
         Here are a few projects I have worked on.
       </div>
       <div className="project-card-wrapper">
-        {projectData.map((item) => {
+        {projects.map((item) => {
           return (
             <Card
               cardType={"project"}
-              title={item.title}
-              description={item.description}
-              image={item.img}
+              title={item.projectName}
+              description={item.projectDescription}
+              image={item.image ? URL.createObjectURL(item.image) : null}
               projectLink={item.projectLink}
-              gitLink={item.gitLink}
+              gitLink={item.githubLink}
             />
           );
         })}

@@ -16,22 +16,26 @@ const Card = (props) => {
                 <p className="project-description">{props.description}</p>
               </div>
               <div className="project-link-buttons-wrapper">
-                <a
-                  className="project-link-buttons"
-                  href={props.projectLink}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <FiExternalLink className="icon" />
-                </a>
-                <a
-                  className="project-link-buttons"
-                  href={props.gitLink}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <IoLogoGithub className="icon" />
-                </a>
+                {props.projectLink && (
+                  <a
+                    className="project-link-buttons"
+                    href={props.projectLink}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FiExternalLink className="icon" />
+                  </a>
+                )}
+                {props.gitLink && (
+                  <a
+                    className="project-link-buttons"
+                    href={props.gitLink}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <IoLogoGithub className="icon" />
+                  </a>
+                )}
               </div>
             </div>
           </div>

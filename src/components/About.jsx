@@ -2,7 +2,12 @@ import React, { useEffect, useState } from "react";
 import Card from "./Card/Card";
 import { skillIcons } from "./projects-data";
 import "./about.scss";
+import { useSelector } from "react-redux";
+import { selectForm } from "../redux/formSlice.js";
+
 const About = () => {
+  const form = useSelector(selectForm);
+
   const getIconSize = () => {
     const width = window.innerWidth;
     if (width < 770) return 40;
@@ -26,21 +31,16 @@ const About = () => {
           </div>
           <div className="intro">
             Hi Everyone, I am{" "}
-            <span className="highlighted-text">Shikhar Gupta</span> from
-            <span className="highlighted-text"> Jammu & Kashmir, India.</span>
+            <span className="highlighted-text">{form.home.name}</span>
           </div>
-          <div className="intro-grad">
-            I am an undergraduate pursuing B.tech in Electrical Engineering at
-            PEC.
-          </div>
+          <div className="intro-grad">{form.about.aboutYourself}</div>
           <div className="intro-hobbies">
-            {" "}
-            Apart from coding, some other activities that I love to do!
+            Apart from my work, some other activities that I love to do!
             <div className="hobby-list">
               <ul className="list-style">
-                <li>Playing Games</li>
-                <li>Travelling</li>
-                <li>Enjoying Songs</li>
+                {form.about.hobbies.map((item) => (
+                  <li>{item}</li>
+                ))}
               </ul>
             </div>
           </div>
