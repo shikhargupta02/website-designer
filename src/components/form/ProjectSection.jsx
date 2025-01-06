@@ -2,7 +2,6 @@ import { useState } from "react";
 import { cloneDeep } from "lodash";
 import "./project-form.scss";
 import { initialProjectData } from "../../utils/helper";
-import { TbExclamationMark } from "react-icons/tb";
 export const ProjectSection = (props) => {
   const [projects, setProjects] = useState([cloneDeep(initialProjectData)]);
 
