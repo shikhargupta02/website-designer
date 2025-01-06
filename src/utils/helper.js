@@ -48,7 +48,7 @@ export const handleFormUpdate = (key, value, formRef) => {
 export const getGeneratedResponses = async (formRef) => {
   const about = formRef.current.about;
   const home = formRef.current.home;
-  const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${process.env.GEMINI_API_KEY}`;
+  const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${process.env.REACT_APP_GEMINI_API_KEY}`;
   const hobbyBody = {
     contents: [
       {
