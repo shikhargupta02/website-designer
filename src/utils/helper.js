@@ -45,9 +45,78 @@ export const handleFormUpdate = (key, value, formRef) => {
     formRef.current[key] = value;
   }
 };
-export const getGeneratedResponses = async (formRef) => {
-  const about = formRef.current.about;
+export const shortIntroRephrase = async (formRef) => {
   const home = formRef.current.home;
+  const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${process.env.REACT_APP_GEMINI_API_KEY}`;
+  const shortIntroBody = {
+    contents: [
+      {
+        parts: [
+          {
+            text: `write a short intro with this text and use /n to seperate pragraphs  -${home.shortIntro} if text not understandable give random intro in paragraphs  `,
+          },
+        ],
+      },
+    ],
+  };
+  const shortIntro = await axios.post(apiUrl, shortIntroBody);
+  return shortIntro.data.candidates[0].content.parts[0].text;
+};
+export const hobbyRephrase = async (formRef) => {
+  const about = formRef.current.about;
+  const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${process.env.REACT_APP_GEMINI_API_KEY}`;
+  const hobbyBody = {
+    contents: [
+      {
+        parts: [
+          {
+            text: `give me 3 of hobbies from this text that are sepearated by '-' ${about.hobbies} if text not understandable give random `,
+          },
+        ],
+      },
+    ],
+  };
+  const hobby = await axios.post(apiUrl, hobbyBody);
+  return hobby.data.candidates[0].content.parts[0].text;
+};
+export const aboutYouRephrase = async (formRef) => {
+  const about = formRef.current.about;
+  const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${process.env.REACT_APP_GEMINI_API_KEY}`;
+  const aboutYouBody = {
+    contents: [
+      {
+        parts: [
+          {
+            text: `re phrase this into a brief paragraph  -${about.aboutYourself} if text not understandable give random intro in paragraph`,
+          },
+        ],
+      },
+    ],
+  };
+  const aboutYou = await axios.post(apiUrl, aboutYouBody);
+  return aboutYou.data.candidates[0].content.parts[0].text;
+};
+export const descriptionRephrase = async (formRef) => {
+  const home = formRef.current.home;
+  const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${process.env.REACT_APP_GEMINI_API_KEY}`;
+  const homeDescription = {
+    contents: [
+      {
+        parts: [
+          {
+            text: `re phrase this into a brief paragraph  -${home.description} if text not understandable give random paragraph`,
+          },
+        ],
+      },
+    ],
+  };
+  const description = await axios.post(apiUrl, homeDescription);
+  return description.data.candidates[0].content.parts[0].text;
+};
+
+export const getGeneratedResponses = async (formRef) => {
+  const home = formRef.current.home;
+  const about = formRef.current.about;
   const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${process.env.REACT_APP_GEMINI_API_KEY}`;
   const hobbyBody = {
     contents: [

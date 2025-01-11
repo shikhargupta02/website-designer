@@ -72,7 +72,7 @@ export const ProjectSection = (props) => {
           />
           {/* <div
               className="ai-tooltip"
-              title="This text will be repharsed by AI"
+              title="You can rephrase this with google gemini"
             >
               <TbExclamationMark className="exclamation-icon" />
             </div> 

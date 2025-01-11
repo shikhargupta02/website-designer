@@ -1,9 +1,12 @@
 import React, { useRef, useState } from "react";
 import "./project-form.scss";
 import {
+  aboutYouRephrase,
+  descriptionRephrase,
   getGeneratedResponses,
   handleFormUpdate,
   initialFormRefData,
+  shortIntroRephrase,
 } from "../../utils/helper";
 import { ProjectSection } from "./ProjectSection";
 import { cloneDeep } from "lodash";
@@ -11,35 +14,12 @@ import { useDispatch } from "react-redux";
 import { updateForm, updateShowPortfolio } from "../../redux/formSlice";
 import { Loader } from "../Loader";
 import { TbExclamationMark } from "react-icons/tb";
+import { ProjectSkillSection } from "./ProjectSkillSection";
 
 const ProjectForm = () => {
   const [showLoader, setLoader] = useState(false);
   const formRef = useRef(cloneDeep(initialFormRefData));
-  const [skills, setSkills] = useState([""]);
   const dispatch = useDispatch();
-  const handleSkillChange = (index, value) => {
-    const newSkills = [...skills];
-    newSkills[index] = value;
-    if (formRef.current.about.skills.length < index + 1) {
-      formRef.current.about.skills.push(value);
-    } else {
-      formRef.current.about.skills[index] = value;
-    }
-    setSkills(newSkills);
-  };
-
-  const addSkill = () => {
-    setSkills([...skills, ""]);
-  };
-
-  const removeSkill = (index) => {
-    const newSkills = skills.filter((item, i) => i !== index);
-    const updatedSkills = skills.filter(
-      (item, i) => i !== index && item !== ""
-    );
-    formRef.current.about.skills = updatedSkills;
-    setSkills(newSkills);
-  };
 
   // const handleImageChange = (index, file) => {
   //   const newProjects = [...projects];
@@ -62,6 +42,31 @@ const ProjectForm = () => {
     dispatch(updateForm(formRef.current));
     dispatch(updateShowPortfolio(true));
     setLoader(false);
+  };
+
+  const handleIntroUpdate = async () => {
+    const value = await shortIntroRephrase(formRef);
+    const inputElement = document.getElementById("short-intro"); // Get the input element by ID
+    if (inputElement) {
+      inputElement.value = value;
+      formRef.current.home.shortIntro = value;
+    }
+  };
+  const handleDescriptionUpdate = async () => {
+    const value = await descriptionRephrase(formRef);
+    const inputElement = document.getElementById("description"); // Get the input element by ID
+    if (inputElement) {
+      inputElement.value = value;
+      formRef.current.home.description = value;
+    }
+  };
+  const handleAboutYouUpdate = async () => {
+    const value = await aboutYouRephrase(formRef);
+    const inputElement = document.getElementById("about-yourself"); // Get the input element by ID
+    if (inputElement) {
+      inputElement.value = value;
+      formRef.current.about.aboutYourself = value;
+    }
   };
 
   return (
@@ -101,11 +106,18 @@ const ProjectForm = () => {
                 />
                 <div
                   className="ai-tooltip"
-                  title="This text will be repharsed by AI"
+                  title="You can rephrase this with google gemini"
                 >
                   <TbExclamationMark className="exclamation-icon" />
                 </div>
-              </div>
+              </div>{" "}
+              <button
+                type="button"
+                className="form-button"
+                onClick={handleDescriptionUpdate}
+              >
+                Rephrase
+              </button>
             </div>
             <div className="form-group">
               <label htmlFor="short-intro">Short intro of you:</label>
@@ -120,11 +132,18 @@ const ProjectForm = () => {
                 />
                 <div
                   className="ai-tooltip"
-                  title="This text will be repharsed by AI"
+                  title="You can rephrase this with google gemini"
                 >
                   <TbExclamationMark className="exclamation-icon" />
                 </div>
               </div>
+              <button
+                type="button"
+                className="form-button"
+                onClick={handleIntroUpdate}
+              >
+                Rephrase
+              </button>
             </div>
             <div className="form-group">
               <h3>About yourself:</h3>
@@ -147,11 +166,18 @@ const ProjectForm = () => {
                   />
                   <div
                     className="ai-tooltip"
-                    title="This text will be repharsed by AI"
+                    title="You can rephrase this with google gemini"
                   >
                     <TbExclamationMark className="exclamation-icon" />
                   </div>
                 </div>
+                <button
+                  type="button"
+                  className="form-button"
+                  onClick={handleAboutYouUpdate}
+                >
+                  Rephrase
+                </button>
               </div>
               <div>
                 <label htmlFor="hobbies">Write little about hobbies:</label>
@@ -166,39 +192,14 @@ const ProjectForm = () => {
                   />
                   <div
                     className="ai-tooltip"
-                    title="This text will be repharsed by AI"
+                    title="You can rephrase this with google gemini"
                   >
                     <TbExclamationMark className="exclamation-icon" />
                   </div>
                 </div>
               </div>
             </div>
-
-            <div className="form-group">
-              <label>Skills:</label>
-              {skills.map((skill, index) => (
-                <div key={index} className="skill-group">
-                  <input
-                    type="text"
-                    onChange={(e) => handleSkillChange(index, e.target.value)}
-                    placeholder="Skill"
-                    required={true}
-                    value={skill}
-                  />
-                  <button
-                    type="button"
-                    className="form-button"
-                    onClick={() => removeSkill(index)}
-                  >
-                    Remove
-                  </button>
-                </div>
-              ))}
-              <button type="button" className="form-button" onClick={addSkill}>
-                Add Skill
-              </button>
-            </div>
-
+            <ProjectSkillSection formRef={formRef} />
             <ProjectSection formRef={formRef} />
             <div className="form-group">
               <label htmlFor="resume-link">Resume Link:</label>

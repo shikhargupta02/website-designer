@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
-import Card from "./Card/Card";
-import { skillIcons } from "./projects-data";
+// import React, { useEffect, useState } from "react";
+// import Card from "./Card/Card";
 import "./about.scss";
 import { useSelector } from "react-redux";
 import { selectForm } from "../redux/formSlice.js";
@@ -8,19 +7,18 @@ import { selectForm } from "../redux/formSlice.js";
 const About = () => {
   const form = useSelector(selectForm);
 
-  const getIconSize = () => {
-    const width = window.innerWidth;
-    if (width < 770) return 40;
-    if (width < 1080) return 60;
-    return 80;
-  };
-  const [iconSize, setIconSize] = useState(getIconSize());
-  useEffect(() => {
-    const handleResize = () => setIconSize(getIconSize());
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-  const mySkills = skillIcons(iconSize);
+  // const getIconSize = () => {
+  //   const width = window.innerWidth;
+  //   if (width < 770) return 40;
+  //   if (width < 1080) return 60;
+  //   return 80;
+  // };
+  // const [iconSize, setIconSize] = useState(getIconSize());
+  // useEffect(() => {
+  //   const handleResize = () => setIconSize(getIconSize());
+  //   window.addEventListener("resize", handleResize);
+  //   return () => window.removeEventListener("resize", handleResize);
+  // }, []);
   return (
     <div className="about-section">
       <div className="about-top-wrapper">
@@ -50,11 +48,7 @@ const About = () => {
         <div className="skill-head">
           My <span className="highlighted-text">Skills</span>
         </div>
-        <div className="skills-icons-wrapper">
-          {mySkills.map((item) => {
-            return <Card icon={item} />;
-          })}
-        </div>
+        <div className="skills-icons-wrapper">skills</div>
       </div>
     </div>
   );
